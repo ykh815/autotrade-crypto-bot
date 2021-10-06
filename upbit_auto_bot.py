@@ -17,7 +17,7 @@ Upbit_ScretKey = simpleEnDecrypt.decrypt(my_key.upbit_secret)
 upbit = pyupbit.Upbit(Upbit_AccessKey, Upbit_ScretKey)
 
 #내가 매수할 총 코인 개수
-MaxCoinCnt = 10.0
+MaxCoinCnt = 8.0
 
 #처음 매수할 비중(퍼센트)
 FirstRate = 10.0
