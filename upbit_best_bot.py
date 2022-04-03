@@ -7,7 +7,7 @@ import pyupbit
 import ende_key  #암복호화키
 import my_key    #업비트 시크릿 액세스키
 
-import line_alert #라인 메세지를 보내기 위함!
+# import line_alert #라인 메세지를 보내기 위함!
 import json
 
 '''
@@ -322,7 +322,7 @@ if myUpbit.IsHasCoin(balances,BTC_Ticker) == True:
                     balances = myUpbit.SellCoinMarket(upbit,BTC_Ticker,GapAmt)
 
                     
-                    line_alert.SendMessage("ReBalance !!! : " + BTC_Ticker + " by SELL:" )
+                    # line_alert.SendMessage("ReBalance !!! : " + BTC_Ticker + " by SELL:" )
 
 
 
@@ -334,7 +334,7 @@ if myUpbit.IsHasCoin(balances,BTC_Ticker) == True:
 
                 balances = myUpbit.BuyCoinMarket(upbit,BTC_Ticker,GapMoney)
                 
-                line_alert.SendMessage("ReBalance !!! : " + BTC_Ticker + " by BUY:" )
+                # line_alert.SendMessage("ReBalance !!! : " + BTC_Ticker + " by BUY:" )
                 print("--------------> BUY BITCOIN!!!!")
 
 #비트코인이 매수되지 않은 상태
@@ -393,7 +393,7 @@ if myUpbit.IsHasCoin(balances,ETH_Ticker) == True:
                     #시장가 매도를 한다.
                     balances = myUpbit.SellCoinMarket(upbit,ETH_Ticker,GapAmt)
                     
-                    line_alert.SendMessage("ReBalance !!! : " + ETH_Ticker + " by SELL:" )
+                    # line_alert.SendMessage("ReBalance !!! : " + ETH_Ticker + " by SELL:" )
 
                     print("--------------> SELL Eherium!!!!")
 
@@ -406,7 +406,7 @@ if myUpbit.IsHasCoin(balances,ETH_Ticker) == True:
 
                 balances = myUpbit.BuyCoinMarket(upbit,ETH_Ticker,GapMoney)
             
-                line_alert.SendMessage("ReBalance !!! : " + ETH_Ticker + " by BUY:" )
+                # line_alert.SendMessage("ReBalance !!! : " + ETH_Ticker + " by BUY:" )
                 print("--------------> BUY Eherium!!!!")
               
 #이더리움이 매수되지 않은 상태
@@ -506,7 +506,7 @@ for ticker in BestCoinList:
                             balances = myUpbit.SellCoinMarket(upbit,ticker,GapAmt)
                             print("----BEST------> SELL ",ticker,"!!!!")
                                         
-                            line_alert.SendMessage("ReBalance !!! : " + ticker + " by SELL:" )
+                            # line_alert.SendMessage("ReBalance !!! : " + ticker + " by SELL:" )
 
 
                 #갭이 양수면 해당 코인 비중이 적으니 추매할 필요가 있는 경우
@@ -518,7 +518,7 @@ for ticker in BestCoinList:
                         balances = myUpbit.BuyCoinMarket(upbit,ticker,GapMoney)
                         print("-----BEST------> BUY ",ticker,"!!!!")
                         
-                        line_alert.SendMessage("ReBalance !!! : " + ticker + " by BUY:" )
+                        # line_alert.SendMessage("ReBalance !!! : " + ticker + " by BUY:" )
                     
 
         #매수되지 않은 상태
@@ -653,7 +653,7 @@ for ticker in Tickers:
                             with open(dolpha_type_file_path, 'w') as outfile:
                                 json.dump(DolPaCoinList, outfile)
                                     
-                            line_alert.SendMessage("DOLPA End CUT!!! : " + ticker + " Revenue:" + str(revenue_rate) )
+                            # line_alert.SendMessage("DOLPA End CUT!!! : " + ticker + " Revenue:" + str(revenue_rate) )
 
         
     except Exception as e:
@@ -843,7 +843,7 @@ for ticker in TopCoinList:
                         if total_water_money < water_money:
                             water_money = total_water_money #남은 금액을 넣어준다!
 
-                    line_alert.SendMessage("DANTA B START : " + ticker)
+                    # line_alert.SendMessage("DANTA B START : " + ticker)
 
                 #상승장일때는 A타입 코인 리스트를 만들 수 있다! (매수할 수 있다)
                 if IsUpTrend == True and bAlreadyBTypeBuyDone == False:
@@ -927,7 +927,7 @@ for ticker in TopCoinList:
                             if total_water_money < water_money:
                                 water_money = total_water_money #남은 금액을 넣어준다!
 
-                        line_alert.SendMessage("DANTA A START : " + ticker)
+                        # line_alert.SendMessage("DANTA A START : " + ticker)
 
 
             ######################################################################
@@ -1002,7 +1002,7 @@ for ticker in Tickers:
                             json.dump(AltAtypeList, outfile)
 
                         
-                        line_alert.SendMessage("DANTA A END : " + ticker)
+                        # line_alert.SendMessage("DANTA A END : " + ticker)
 
 
                     #B타입의 알트 코인이었다면 리스트에서 제거 해준다!
@@ -1014,7 +1014,7 @@ for ticker in Tickers:
                             json.dump(AltBtypeList, outfile)
 
                         
-                        line_alert.SendMessage("DANTA B END : " + ticker)
+                        # line_alert.SendMessage("DANTA B END : " + ticker)
 
             #여기선 물타기 주문이 걸려서 평단과 수량이 변경된 경우 이를 새로 변경된 평단과 수량으로 익절 주문을 다시 걸어준다!!!
 
@@ -1108,7 +1108,7 @@ for ticker in Tickers:
                     balances = myUpbit.SellCoinMarket(upbit,ticker,upbit.get_balance(ticker))
 
                     
-                    line_alert.SendMessage("DOLPA End!!! : " + ticker + " Revenue:" + str(revenue_rate) )
+                    # line_alert.SendMessage("DOLPA End!!! : " + ticker + " Revenue:" + str(revenue_rate) )
 
 
 
@@ -1212,7 +1212,7 @@ for ticker in Tickers:
 
 
                         
-                        line_alert.SendMessage("DOLPA START : " + ticker)
+                        # line_alert.SendMessage("DOLPA START : " + ticker)
 
 
 
