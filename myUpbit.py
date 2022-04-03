@@ -146,13 +146,15 @@ def GetCoinNowMoney(balances,Ticker):
             break
     return CoinMoney
 
-#티커에 해당하는 코인의 총 매수금액을 리턴하는 함수
-def GetCoinNowMoney(balances,Ticker):
+#티커에 해당하는 코인의 현재 평가 금액을 리턴하는 함수
+def GetCoinNowRealMoney(balances,Ticker):
     CoinMoney = 0.0
     for value in balances:
         realTicker = value['unit_currency'] + "-" + value['currency']
         if Ticker == realTicker:
-            CoinMoney = float(value['avg_buy_price']) * (float(value['balance']) + float(value['locked']))
+            time.sleep(0.1)
+            nowPrice = pyupbit.get_current_price(realTicker)
+            CoinMoney = float(nowPrice) * (float(value['balance']) + float(value['locked']))
             break
     return CoinMoney
 
