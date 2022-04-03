@@ -1,4 +1,4 @@
-#-*-coding:utf-8 -*-
+1#-*-coding:utf-8 -*-
 import pyupbit
 import time
 import pandas as pd
@@ -135,6 +135,16 @@ def GetRevenueRate(balances,Ticker):
             print("error:", e)
 
     return revenue_rate
+
+#티커에 해당하는 코인의 총 매수금액을 리턴하는 함수
+def GetCoinNowMoney(balances,Ticker):
+    CoinMoney = 0.0
+    for value in balances:
+        realTicker = value['unit_currency'] + "-" + value['currency']
+        if Ticker == realTicker:
+            CoinMoney = float(value['avg_buy_price']) * (float(value['balance']) + float(value['locked']))
+            break
+    return CoinMoney
 
 #티커에 해당하는 코인의 총 매수금액을 리턴하는 함수
 def GetCoinNowMoney(balances,Ticker):
