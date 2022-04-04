@@ -1,2 +1,4 @@
 log/
+balance/
+*.json
 __pycache__/

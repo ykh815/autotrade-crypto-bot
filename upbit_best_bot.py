@@ -192,7 +192,7 @@ Smon = curr.strftime("%m")
 Shour = curr.strftime("%H")
 Smin = curr.strftime("%M")
 LOG_DIR = "./balance"
-LOG_FILE = "{}/{}/UpbitBalance{}.log"
+LOG_FILE = "./balance/{}/{}/UpbitBalance{}.log"
 
 try:
     start_flag = (Shour == "09" and Smin == "00")
