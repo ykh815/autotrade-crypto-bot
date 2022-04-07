@@ -8,7 +8,7 @@ import pyupbit
 
 time.sleep(10.0)
 
-top_file_path = "./UpbitTopCoinList.json"
+top_file_path = "/home/ykh815/autotrade-crypto-bot/UpbitTopCoinList.json"
 
 #거래대금이 많은 탑코인 30개의 리스트
 TopCoinList = myUpbit.GetTopCoinList("day",30)

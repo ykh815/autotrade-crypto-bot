@@ -90,7 +90,7 @@ Each_DolPa_Portion = DolPa_Coin / MaxDolPaCoinCnt
 DolPaCoinList = list() #변동성 돌파 코인 리스트
 
 #파일에 저장된 경우 읽어 온다
-dolpha_type_file_path = "./DolPaCoin.json"
+dolpha_type_file_path = "/home/ykh815/autotrade-crypto-bot/DolPaCoin.json"
 try:
     with open(dolpha_type_file_path, "r") as json_file:
         DolPaCoinList = json.load(json_file)
@@ -129,7 +129,7 @@ ALT_Atype_First_Buy_Rate = 0.2 #A타입 첫 매수시 들어갈 금액 비중
 AltAtypeList = list() #A타입 알트 코인들 리스트
 
 #파일에 저장된 경우 읽어 온다
-atype_file_path = "./AltATypeCoin.json"
+atype_file_path = "/home/ykh815/autotrade-crypto-bot/AltATypeCoin.json"
 try:
     with open(atype_file_path, "r") as json_file:
         AltAtypeList = json.load(json_file)
@@ -149,7 +149,7 @@ ALT_Btype_First_Buy_Rate = 0.1 #B타입 첫 매수시 들어갈 금액 비중
 AltBtypeList = list() #B타입 알트 코인들 리스트
 
 #파일에 저장된 경우 읽어 온다
-btype_file_path = "./AltBTypeCoin.json"
+btype_file_path = "/home/ykh815/autotrade-crypto-bot/AltBTypeCoin.json"
 try:
     with open(btype_file_path, "r") as json_file:
         AltBtypeList = json.load(json_file)
@@ -191,8 +191,8 @@ Syear = curr.strftime("%Y")
 Smon = curr.strftime("%m")
 Shour = curr.strftime("%H")
 Smin = curr.strftime("%M")
-LOG_DIR = "./balance"
-LOG_FILE = "./balance/{}/{}/UpbitBalance{}.log"
+LOG_DIR = "/home/ykh815/autotrade-crypto-bot/balance"
+LOG_FILE = "{}/{}/UpbitBalance{}.log"
 
 try:
     start_flag = (Shour == "09" and Smin == "00")
@@ -205,6 +205,7 @@ try:
             log.write("{} | 원금: {}, 평가금: {}, 수익율: {}\n".format(Sdate, TotalMoney, TotalRealMoney, TotalRevenue))
 except Exception as e:
     print("Logging error")
+
 #----------------------------------------------------------------------------------------------------------------------#
 #A타입의 알트코인별 최대 매수 금액(할당 금액) = (총평가금액 * 할당비중(20%) / 최대코인개수)
 ALT_Atype_CoinMaxMoney = ((TotalRealMoney * ALT_Atype_Portion) / ALT_Atype_MaxCnt)
@@ -547,7 +548,7 @@ for ticker in BestCoinList:
 
 #----------------------------------------------------------------------------------------------------------------------#
 ## 탑 코인 리스트를 파일에서 읽어서 TopCoinList에 넣는다. ##
-top_file_path = "./UpbitTopCoinList.json"
+top_file_path = "/home/ykh815/autotrade-crypto-bot/UpbitTopCoinList.json"
 
 TopCoinList = list()
 
@@ -568,7 +569,7 @@ LovelyCoinList = ['KRW-MED','KRW-BORA','KRW-WAVES','KRW-VET','KRW-THETA','KRW-AL
 
 #----------------------------------------------------------------------------------------------------------------------#
 #도달 수익을 임시 저장할 파일
-revenue_file_path = "./RevenueDict.json"
+revenue_file_path = "/home/ykh815/autotrade-crypto-bot/RevenueDict.json"
 
 revenueDic = dict() #딕셔너리다!!!
 
@@ -585,7 +586,7 @@ except Exception as e:
 
 
 #이평선 정배열 단타친 코인 리스트
-maup_file_path = "./MaUpDict.json"
+maup_file_path = "/home/ykh815/autotrade-crypto-bot/MaUpDict.json"
 
 maupList = list() #
 
